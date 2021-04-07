@@ -91,8 +91,6 @@ class DCGAN(GANBase):
                 nn.Tanh()
             )
 
-        # # 这个效果不错，先保存一下
-        # 效果更好
         if disc_type == 1:
             self.discriminator = nn.Sequential(
                 _conv(1, 16, 3, 2, 1, False, "lrelu", 0.25),    # --> 14x14

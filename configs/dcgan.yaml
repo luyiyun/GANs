@@ -1,0 +1,21 @@
+name: DCGAN
+bs: 2560
+epochs: 200
+nw: 8
+device: "cuda:0"
+disc_lr: 0.0002
+gene_lr: 0.0002
+
+params:
+    z_dist: normal
+    z_std: 1
+    latent_size: 100
+    gen_type: 1
+    disc_type: 1
+
+# gen_type = 1: 使用Upsample + conv + BN + LReLU进行上采样
+# gen_type = 2: 使用Deconv + BN + LReLU进行上采样
+#
+# disc_type = 1: 判别器架构为Convs + reshape + Linear
+# disc_type = 2: 判别器架构为Convs + global pooling + Linear
+# disc_type = 3: 判别器架构为Convs(多加一层用于将channels降为1) + global pooling

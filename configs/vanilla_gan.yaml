@@ -1,0 +1,12 @@
+name: VanillaGAN
+bs: 2560
+epochs: 300
+nw: 8
+device: "cuda:0"
+disc_lr: 0.0002
+gene_lr: 0.0002
+
+params:
+    latent_size: 100
+    z_dist: normal
+    z_std: 1
